@@ -266,7 +266,7 @@ const App: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-12">
+    <div className="min-h-screen bg-[#FBFBFE] pb-24">
       <Navbar 
         user={user} 
         onLogout={handleLogout} 
@@ -277,7 +277,7 @@ const App: React.FC = () => {
           if (user && (user.role === 'teacher' || user.role === 'staff' || user.role === 'librarian')) markThreadAsRead(user.id);
         }}
       />
-      <main className="container mx-auto px-4 mt-8 max-w-6xl">
+      <main className="container mx-auto px-4 md:px-12 mt-12 max-w-7xl animate-in">
         {user.role === 'teacher' && (
           <TeacherDashboard user={user} students={students.filter(s => s && s.className === user.assignedClass && !s.isGraduated)} reports={reports.filter(r => r && r.teacherId === user.id)} messages={filteredMessages} leaveApplications={leaveApplications.filter(l => l && l.userId === user.id)} requisitions={requisitions.filter(r => r && r.userId === user.id)} books={books} borrowings={borrowings} onAddReport={(r) => { setReports(prev => [...prev, r]); addAuditLog('Report Submit', `Report for ${r.learnerName}`, 'Academic'); }} onSendMessage={(m) => setMessages(prev => [...prev, m])} onEditMessage={(id, c) => setMessages(prev => prev.map(m => m.id === id ? {...m, content: c} : m))} onDeleteMessage={(id) => setMessages(prev => prev.filter(m => m.id !== id))} onMarkThreadRead={markThreadAsRead} onApplyLeave={(l) => { setLeaveApplications(prev => [l, ...prev]); addAuditLog('Leave Apply', `Type: ${l.type}`, 'Administrative'); }} onAddRequisition={(r) => { setRequisitions(prev => [r, ...prev]); addAuditLog('Requisition Submit', `Amt: ${r.totalAmount}`, 'Financial'); }} onUpdateStudent={(s) => setStudents(prev => prev.map(old => old && old.id === s.id ? s : old))} onAddBorrowing={(b) => { setBorrowings(prev => [...prev, b]); addAuditLog('Library Issue', b.bookTitle, 'Administrative'); }} />
         )}

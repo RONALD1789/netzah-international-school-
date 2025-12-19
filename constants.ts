@@ -258,35 +258,43 @@ export const CLASS_SKILL_DATA: Record<string, any[]> = {
   ],
   "Shammah": [
     {
-      id: "literacy_advanced",
-      name: "ADVANCED LITERACY & COMPREHENSION",
-      icon: "✍️",
-      color: "bg-indigo-600",
+      id: "listening_reading",
+      name: "LISTENING AND READING SKILLS",
+      icon: "📚",
+      color: "bg-[#F59E0B]",
       skills: [
-        "I can read grade-appropriate texts with fluency and expression.",
-        "I can identify the main idea and supporting details in a story.",
-        "I can use correct punctuation (full stops, commas, question marks).",
-        "I can write creative stories with a clear beginning, middle, and end.",
-        "I can use descriptive adjectives to enhance my writing."
+        "I can identify objects and talk about them.",
+        "I can arrange objects in order by color, size and shape.",
+        "I can say my first and last name.",
+        "I know how old I am.",
+        "I can identify letter sounds and numbers correctly.",
+        "I can follow one step directions to perform a task.",
+        "I can attend to the person speaking to me.",
+        "I can listen to stories, poems, rhymes and songs with enthusiasm.",
+        "I can follow up a story from beginning to end.",
+        "I can answer questions about a story after it has been read to me."
       ]
     },
     {
-      id: "mathematics_primary",
-      name: "PRIMARY MATHEMATICS",
-      icon: "📐",
-      color: "bg-emerald-600",
+      id: "social",
+      name: "SOCIAL / EMOTIONAL SKILLS",
+      icon: "👫",
+      color: "bg-[#EF4444]",
       skills: [
-        "I can perform addition and subtraction of two-digit numbers.",
-        "I am learning basic multiplication tables (2, 5, 10).",
-        "I can tell time to the hour and half-hour on an analog clock.",
-        "I can identify and describe properties of 2D and 3D shapes.",
-        "I can solve multi-step word problems involving real-life scenarios."
+        "I feel free to express my emotions.",
+        "I can control my feelings.",
+        "I can play and share cooperatively with other children.",
+        "I am learning to take turns.",
+        "I can ask for help from others when needed.",
+        "I show respect for others.",
+        "I accept and respond to teacher's authority.",
+        "I can identify human feelings from people's faces (sad, happy)",
+        "I can show concern for things around me."
       ]
     }
   ]
 };
 
-// Added missing FEE_STRUCTURE and END_OF_TERM_LETTER to fix import errors in App and Dashboards
 export const FEE_STRUCTURE = [
   { particular: "Tuition Fees", k: "850,000", g13: "950,000", g46: "1,050,000" },
   { particular: "Admission Fee (New Students)", k: "200,000", g13: "200,000", g46: "200,000" },
